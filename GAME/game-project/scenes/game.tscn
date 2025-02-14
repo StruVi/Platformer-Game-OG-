@@ -185,3 +185,4 @@ position = Vector2(39, 46)
 position = Vector2(0, -4)
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
+position_smoothing_speed = 3.0
