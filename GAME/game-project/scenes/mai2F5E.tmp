@@ -1,0 +1,177 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcsm4pb0d30k4"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_po6s3"]
+[ext_resource type="Texture2D" uid="uid://bex47yv48mbp0" path="res://assets/bg/Screenshot 2025-02-15 122940.png" id="2_vtoy6"]
+
+[sub_resource type="Animation" id="Animation_0t02v"]
+resource_name = "fade_in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 2.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DarkOverlay:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0666667, 2.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0666667, 2.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0333333, 2.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_me42f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DarkOverlay:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0aayp"]
+_data = {
+"RESET": SubResource("Animation_me42f"),
+"fade_in": SubResource("Animation_0t02v")
+}
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+script = ExtResource("1_po6s3")
+
+[node name="FullscreenToggle" type="CheckButton" parent="."]
+top_level = true
+layout_mode = 2
+offset_left = 1008.0
+offset_top = 13.0
+offset_right = 1135.0
+offset_bottom = 44.0
+text = "Fullscreen"
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -102.5
+offset_top = -157.25
+offset_right = 302.5
+offset_bottom = -75.25
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.475904, 0.502436)
+texture = ExtResource("2_vtoy6")
+
+[node name="DarkOverlay" type="ColorRect" parent="."]
+top_level = true
+layout_mode = 2
+offset_left = 336.0
+offset_top = 538.0
+offset_right = 440.0
+offset_bottom = 538.0
+scale = Vector2(4.71355, -14.4452)
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+top_level = true
+texture_filter = 1
+layout_mode = 0
+offset_left = 357.0
+offset_top = 164.0
+offset_right = 457.0
+offset_bottom = 261.0
+scale = Vector2(4.28431, 3.75874)
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Super Knight"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0aayp")
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 145.0
+offset_bottom = 128.0
+scale = Vector2(0.230373, 0.213588)
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "A 2D Platformer
+DEMO for college
+by Aswin Vibushan
+ver 1.0 (demo)"
+
+[node name="Label2" type="Label" parent="VBoxContainer2"]
+layout_mode = 2

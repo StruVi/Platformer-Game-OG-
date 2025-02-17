@@ -1,0 +1,218 @@
+[gd_scene load_steps=20 format=3 uid="uid://tneevk5i3xaa"]
+
+[ext_resource type="Texture2D" uid="uid://svhh6ie3d1xj" path="res://assets/sprites/coin.png" id="1_wxoiq"]
+
+[sub_resource type="GDScript" id="GDScript_15faq"]
+script/source = "extends CanvasLayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qc0l"]
+atlas = ExtResource("1_wxoiq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogust"]
+atlas = ExtResource("1_wxoiq")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yljog"]
+atlas = ExtResource("1_wxoiq")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1fir"]
+atlas = ExtResource("1_wxoiq")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rst2e"]
+atlas = ExtResource("1_wxoiq")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76iuv"]
+atlas = ExtResource("1_wxoiq")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kugop"]
+atlas = ExtResource("1_wxoiq")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21583"]
+atlas = ExtResource("1_wxoiq")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ohqp"]
+atlas = ExtResource("1_wxoiq")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ib1g6"]
+atlas = ExtResource("1_wxoiq")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uc71y"]
+atlas = ExtResource("1_wxoiq")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2kay"]
+atlas = ExtResource("1_wxoiq")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3oj22"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qc0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogust")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yljog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1fir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rst2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76iuv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kugop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21583")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ohqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ib1g6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uc71y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2kay")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_epb5s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qc0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogust")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yljog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1fir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rst2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76iuv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kugop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21583")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ohqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ib1g6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uc71y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2kay")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="Animation" id="Animation_3tbm7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HUD/AnimatedSprite2D:sprite_frames")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_epb5s")]
+}
+
+[sub_resource type="Animation" id="Animation_wy2jm"]
+resource_name = "coin_count_animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HUD/AnimatedSprite2D:sprite_frames")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_46ssq"]
+_data = {
+"RESET": SubResource("Animation_3tbm7"),
+"coin_count_animation": SubResource("Animation_wy2jm")
+}
+
+[node name="HUD" type="CanvasLayer"]
+script = SubResource("GDScript_15faq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 88.0
+offset_top = 32.0
+offset_right = 128.0
+offset_bottom = 72.0
+scale = Vector2(1.94836, 1.64793)
+
+[node name="Coin_counter" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "0"
+justification_flags = 161
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(56, 48)
+rotation = -3.14159
+scale = Vector2(4.5583, 4.26503)
+sprite_frames = SubResource("SpriteFrames_3oj22")
+autoplay = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_46ssq")
+}
+autoplay = "RESET"
